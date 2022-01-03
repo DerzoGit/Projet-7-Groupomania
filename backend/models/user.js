@@ -1,4 +1,4 @@
-const { Sequelize, DataTypes } = require("sequelize/dist");
+const { Sequelize, DataTypes } = require("sequelize");
 
 const user = db.define('users', {
     id: { type:DataTypes.INTEGER, autoIncrement:true, primaryKey:true },
@@ -8,5 +8,7 @@ const user = db.define('users', {
     password: { type:DataTypes.STRING(255), allowNull:false },
     isAdmin: { type:DataTypes.BOOLEAN, allowNull:false }
 }, {
-    tableName: 'user', timestamp:false, 
-})
+    tableName: 'user', timestamp:false
+});
+
+module.exports = user;
