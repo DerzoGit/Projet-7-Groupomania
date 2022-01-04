@@ -1,7 +1,7 @@
 const { Sequelize, DataTypes } = require("sequelize");
 const sequelize = new Sequelize('sqlite::memory:');
 
-const post = db.define('posts', {
+const Post = db.define('posts', {
     id: { type:DataTypes.INTEGER, autoIncrement:true, primaryKey:true },
     user_id: { type:DataTypes.INTEGER, allowNull:false },
     title: { type:DataTypes.STRING(255), allowNull:true },
@@ -12,4 +12,4 @@ const post = db.define('posts', {
     tableName: 'post', timestamp: false
 });
 
-module.exports = post;
+module.exports = Post;

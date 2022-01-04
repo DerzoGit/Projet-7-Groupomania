@@ -1,7 +1,7 @@
 const { Sequelize, DataTypes } = require("sequelize");
 const sequelize = new Sequelize('sqlite::memory:');
 
-const comment = db.define('comments', {
+const Comment = db.define('comments', {
     id: { type:DataTypes.INTEGER, autoIncrement:true, primaryKey:true },
     user_id: { type:DataTypes.INTEGER, allowNull:false },
     post_id: { type:DataTypes.INTEGER, allowNull:false },
@@ -12,4 +12,4 @@ const comment = db.define('comments', {
     tableName: 'comment', timestamp: false
 });
 
-module.exports = comment;
+module.exports = Comment;
