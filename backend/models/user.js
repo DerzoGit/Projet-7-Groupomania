@@ -1,4 +1,5 @@
 const { Sequelize, DataTypes } = require("sequelize");
+const sequelize = new Sequelize('sqlite::memory:');
 
 const user = db.define('users', {
     id: { type:DataTypes.INTEGER, autoIncrement:true, primaryKey:true },

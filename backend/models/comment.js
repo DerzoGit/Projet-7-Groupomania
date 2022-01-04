@@ -1,4 +1,5 @@
 const { Sequelize, DataTypes } = require("sequelize");
+const sequelize = new Sequelize('sqlite::memory:');
 
 const comment = db.define('comments', {
     id: { type:DataTypes.INTEGER, autoIncrement:true, primaryKey:true },
@@ -6,7 +7,7 @@ const comment = db.define('comments', {
     post_id: { type:DataTypes.INTEGER, allowNull:false },
     content: { type:DataTypes.TEXT, allowNull:false },
     media: { type:DataTypes.STRING(255), allowNull:true },
-    dateAdd: { type:DataTypes.DATE, allowNull:false}
+    dateAdd: { type:DataTypes.DATE, allowNull:false }
 }, {
     tableName: 'comment', timestamp: false
 });
