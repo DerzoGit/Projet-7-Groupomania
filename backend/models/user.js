@@ -7,7 +7,7 @@ const User = sequelize.define('users', {
     firstname: { type:DataTypes.STRING(255), allowNull:false },
     email: { type:DataTypes.STRING(255), allowNull:false, unique:true },
     password: { type:DataTypes.STRING(255), allowNull:false },
-    isAdmin: { type:DataTypes.BOOLEAN, allowNull:false }
+    isAdmin: { type:DataTypes.BOOLEAN }
 }, {
     tableName: 'user', timestamp:false
 });
