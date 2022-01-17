@@ -3,6 +3,8 @@ const express = require("express");
 // Création de l'application en express
 const app = express();
 
+const userRoutes = require("./routes/user");
+
 // CORS Headers (Cross Origin Resource Sharing), gère accès à l'API
 app.use((req, res, next) => {
     // Autoisation d'accès à l'API, * = tout le monde
@@ -15,9 +17,11 @@ app.use((req, res, next) => {
 });
 
 
-
 // Méthode pour transformer corps de requête en objet utilisable
 app.use(express.json());
+
+app.use("/api/auth", userRoutes);
+
 
 // Exporte l'application pour l'utiliser dans server.js
 module.exports = app;
